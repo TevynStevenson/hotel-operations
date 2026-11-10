@@ -5,7 +5,7 @@ public class Employees {
     private int employeeId;
     private String name;
     private String department;
-    private double hoursWorked;
+    private double payRate;
 
     public int getEmployeeId() {
         return employeeId;
@@ -31,6 +31,14 @@ public class Employees {
         this.department = department;
     }
 
+    public double getPayRate() {
+        return payRate;
+    }
+
+    public void setPayRate(double payRate) {
+        this.payRate = payRate;
+    }
+
     public double getHoursWorked() {
         return hoursWorked;
     }
@@ -39,14 +47,24 @@ public class Employees {
         this.hoursWorked = hoursWorked;
     }
 
-    public Employees(int employeeId, String name, String department, double hoursWorked) {
+    public int getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(int startTime) {
+        this.startTime = startTime;
+    }
+
+    public Employees(int employeeId, String name, String department, double hoursWorked, int startTime) {
         this.employeeId = employeeId;
         this.name = name;
         this.department = department;
+        this.payRate = payRate;
         this.hoursWorked = hoursWorked;
+        this.startTime = startTime;
     }
 
-    private double payRate;
+    private double hoursWorked;
     private int startTime;
 
 
@@ -82,7 +100,7 @@ public class Employees {
 
     //Add punchOut() method
     public void punchOut(int time){
-       this.hoursWorked += time - this.startTime;
+       this.hoursWorked += this.startTime - time;
 
     }
 }
