@@ -55,7 +55,7 @@ public class Employees {
         this.startTime = startTime;
     }
 
-    public Employees(int employeeId, String name, String department, double hoursWorked, int startTime) {
+    public Employees(int employeeId, String name, String department) {
         this.employeeId = employeeId;
         this.name = name;
         this.department = department;
@@ -81,7 +81,7 @@ public class Employees {
         if(hoursWorked > 40){
             hoursWorked = 40;
         }
-        return hoursWorked;
+        return this.hoursWorked;
     }
 
     public double getOvertimeHour(){
@@ -101,6 +101,11 @@ public class Employees {
     //Add punchOut() method
     public void punchOut(int time){
        this.hoursWorked += this.startTime - time;
+
+    }
+
+    public void punchTimeCard (int startTime, int endTime){
+        this.hoursWorked += endTime - startTime;
 
     }
 }

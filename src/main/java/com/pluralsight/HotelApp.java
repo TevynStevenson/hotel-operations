@@ -5,20 +5,24 @@ import java.util.Scanner;
 public class HotelApp {
     public static void main(String[] args) {
 
-        Employees employees = new Employees(100,"Tevyn", "Software", 0,8);
+        //Make a new employee
+        Employees employees = new Employees(100,"Tevyn", "Software");
 
         System.out.println("Employee Id "  + employees.getEmployeeId());
         System.out.println("Name "  + employees.getName());
         System.out.println("Department "  + employees.getDepartment());
-        System.out.println("Start Time " + employees.getStartTime());
 
-        employees.punchIn(10);
-        employees.punchOut(5);
-        employees.getHoursWorked();
+        //employees.punchIn(10);
+        //employees.punchOut(5);
+        //employees.getHoursWorked();
+
+        //Add punch time card
+        employees.punchTimeCard(9,17);
 
         System.out.println("Total Hours Worked " + employees.getHoursWorked());
         System.out.println("\n");
 
+        //Make a new room
         Room newRoom = new Room("King",2,1);
 
         System.out.println("Room type: " + newRoom.getRoomType());
@@ -26,6 +30,7 @@ public class HotelApp {
         System.out.println("Number of Guests: " + newRoom.getNumberOfGuests());
         System.out.println("\n");
 
+        //Make a new reservation
         Reservation reservation = new Reservation("double", 2,1);
 
         System.out.println("Room type: " + reservation.getRoomType());
