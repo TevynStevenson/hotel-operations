@@ -90,11 +90,13 @@ public class Reservation {
 
     public double getPrice() {
        // Add if statement for if the room type is King or Double
+
         if(getRoomType().equalsIgnoreCase("King")){
             this.price = 139.00;
         } else if (getRoomType().equalsIgnoreCase("Double")){
             this.price = 124.00;
-        }
+        } else
+            System.out.println("Invalid Room Type");
         return price;
     }
 
