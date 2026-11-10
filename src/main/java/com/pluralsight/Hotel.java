@@ -40,8 +40,8 @@ public class Hotel {
         this.name = name;
         this.numberOfSuites = numberOfSuites;
         this.numberOfRooms = numberOfRooms;
-        this.bookedSuites = 0;
-        this.bookedBasicRooms = 0;
+        this.bookedSuites = bookedSuites;
+        this.bookedBasicRooms =  bookedBasicRooms;
     }
 
 

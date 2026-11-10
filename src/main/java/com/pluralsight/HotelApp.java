@@ -18,8 +18,9 @@ public class HotelApp {
 
         //Add punch time card
         employees.punchTimeCard(9, 17);
-        employees.punchIn();
-        employees.punchOut();
+        employees.punchIn(8);
+        employees.punchOut(17);
+
 
 
         System.out.println("Total Hours Worked " + employees.getHoursWorked());
@@ -71,7 +72,7 @@ public class HotelApp {
         System.out.println("Would you like a suite? (yes/no)");
         String answer1 = scanner.next();
 
-        boolean suite = answer.equalsIgnoreCase("yes");
+        boolean suite = answer1.equalsIgnoreCase("yes");
 
         boolean booked = nikeOpeningHotel.bookRoom(roomCount, suite);
 

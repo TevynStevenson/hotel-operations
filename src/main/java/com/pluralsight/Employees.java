@@ -108,6 +108,8 @@ public class Employees {
     }
 
     public void punchTimeCard(int startTime, int endTime) {
+        this.punchIn(startTime);
+        this.punchOut(endTime);
         this.hoursWorked += endTime - startTime;
 
     }
