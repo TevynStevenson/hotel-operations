@@ -18,6 +18,9 @@ public class HotelApp {
 
         //Add punch time card
         employees.punchTimeCard(9,17);
+        employees.punchIn();
+        employees.punchOut();
+
 
         System.out.println("Total Hours Worked " + employees.getHoursWorked());
         System.out.println("\n");
