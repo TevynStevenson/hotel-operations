@@ -1,6 +1,7 @@
 package com.pluralsight;
 
 //Import LocalDate
+
 import java.time.LocalDateTime;
 
 public class Employees {
@@ -71,7 +72,7 @@ public class Employees {
     private int startTime;
 
 
-    public double getTotalPay(){
+    public double getTotalPay() {
         double regularPay = getRegularHours() * payRate;
         double overTimePay = getOvertimeHour() * payRate * 1.5;
 
@@ -79,51 +80,49 @@ public class Employees {
     }
 
 
-
-    public double getRegularHours(){
-        if(hoursWorked > 40){
+    public double getRegularHours() {
+        if (hoursWorked > 40) {
             hoursWorked = 40;
         }
         return this.hoursWorked;
     }
 
-    public double getOvertimeHour(){
-        if(hoursWorked > 40){
+    public double getOvertimeHour() {
+        if (hoursWorked > 40) {
             return this.hoursWorked - 40;
         }
         return 0;
     }
 
     //Add punchIn() method
-    public void punchIn(int time){
+    public void punchIn(int time) {
         this.startTime = time;
 
     }
 
 
     //Add punchOut() method
-    public void punchOut(int time){
-       this.hoursWorked += this.startTime - time;
+    public void punchOut(int time) {
+        this.hoursWorked += this.startTime - time;
 
     }
 
-    public void punchTimeCard (int startTime, int endTime){
+    public void punchTimeCard(int startTime, int endTime) {
         this.hoursWorked += endTime - startTime;
 
     }
 
     //Add another punchIn method
-    public void punchIn(){
+    public void punchIn() {
         LocalDateTime now = LocalDateTime.now();
         this.startTime = now.getHour();
     }
 
     //Add another punchOut method
-    public void punchOut(){
+    public void punchOut() {
         LocalDateTime now = LocalDateTime.now();
         this.startTime = now.getHour();
     }
-
 
 
 }

@@ -65,23 +65,24 @@ public class Room {
     }
 
 
-   //Make a checkIn class
-    public void cleanRoom(){
-        if(!isOccupied()){
+    //Make a checkIn class
+    public void cleanRoom() {
+        if (!isOccupied()) {
             isClean = true;
         } else
             System.out.println("Room is occupied");
     }
 
-    public void checkIn(){
-        if(!isOccupied() && isClean()){
+    public void checkIn() {
+        if (!isOccupied() && isClean()) {
             isOccupied = true;
             isClean = false;
         }
 
     }
-    public void checkOut(){
-        if(isOccupied()){
+
+    public void checkOut() {
+        if (isOccupied()) {
             isOccupied = false;
             cleanRoom();
         }
