@@ -8,43 +8,62 @@ class RoomTest {
 
     //Test
     @Test
-    public void see_if_checkIn_room_is_occupied_or_dirty() {
+    public void see_if_checkIn_room_is_occupied() {
 
         //arrange
-        Room room = new Room("King", 2,1);
+        Room room = new Room("King", 2,1, false, true);
 
         //act
         room.checkIn();
 
         //assert
-        assertFalse(room.isOccupied());
-        assertFalse(room.isClean());
+        assertTrue(room.isOccupied());
 
     }
 
     @Test
-    public void see_if_checkOut_is_not_occupied_or_clean() {
+    public void see_if_check_in_room_is_dirty(){
+        Room room = new Room("King", 2,1, false, true);
+
+        //act
+        room.checkIn();
+
+        //assert
+        assertFalse(room.isClean());
+    }
+
+    @Test
+    public void see_if_checkOut_is_not_occupied() {
         //Arrange
-        Room room = new Room("King", 2,1);
+        Room room = new Room("King", 2,1, true, true);
 
         //act
         room.checkOut();
 
         //Assert
         assertFalse(room.isOccupied());
-        assertFalse(room.isClean());
     }
 
     @Test
-    public void is_room_clean() {
-        Room room = new Room("King", 2,1);
+    public void see_if_checkOut_is_not_clean() {
+        Room room = new Room("King", 2,1, true, true);
 
         //act
         room.checkOut();
 
         //assert
         assertFalse(room.isClean());
-        room.checkIn();
+    }
+
+    @Test
+    public void is_room_clean() {
+        Room room = new Room("King", 2,1, true, true);
+
+        //act
+        room.checkOut();
+
+        //assert
+        assertFalse(room.isClean());
 
     }
 
@@ -79,7 +98,7 @@ class RoomTest {
         reservation.getPrice();
 
         //assert
-        assertEquals(139.00,reservation.getPrice(), 139.00);
+        assertEquals(139.00,reservation.getPrice(), .0001);
     }
 
 

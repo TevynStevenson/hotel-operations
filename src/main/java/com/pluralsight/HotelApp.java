@@ -27,7 +27,7 @@ public class HotelApp {
         System.out.println("\n");
 
         //Make a new room
-        Room newRoom = new Room("King", 2, 1);
+        Room newRoom = new Room("King", 2, 1, true, true);
 
         System.out.println("Room type: " + newRoom.getRoomType());
         System.out.println("Number of Beds: " + newRoom.getNumberOfBeds());

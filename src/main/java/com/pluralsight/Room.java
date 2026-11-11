@@ -9,7 +9,7 @@ public class Room {
     private boolean isClean;
 
 
-    public Room(String roomType, int numberOfBeds, int numberOfGuests) {
+    public Room(String roomType, int numberOfBeds, int numberOfGuests, boolean isOccupied, boolean isClean) {
         this.roomType = roomType;
         this.numberOfBeds = numberOfBeds;
         this.numberOfGuests = numberOfGuests;
@@ -84,7 +84,7 @@ public class Room {
     public void checkOut() {
         if (isOccupied()) {
             isOccupied = false;
-            cleanRoom();
+            isClean = false;
         }
     }
 
