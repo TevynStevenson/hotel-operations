@@ -59,4 +59,29 @@ class RoomTest {
         assertEquals(9,employee.getStartTime());
     }
 
+
+    @Test
+    public void verify_punchOut_time() {
+        Employees employee = new Employees(100,"Tevyn", "Software");
+
+        //act
+        employee.punchOut(9);
+
+        //assert
+        assertEquals(9,employee.getHoursWorked(), .0001);
+    }
+
+    @Test
+    public void check_if_price_is_correct(){
+        Reservation reservation = new Reservation("king", 1,1);
+
+        //act
+        reservation.getPrice();
+
+        //assert
+        assertEquals(139.00,reservation.getPrice(), 139.00);
+    }
+
+
+
 }
