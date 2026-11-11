@@ -3,6 +3,7 @@ package com.pluralsight;
 //Import LocalDate
 
 import java.time.LocalDateTime;
+import java.time.*;
 
 public class Employees {
 
@@ -103,14 +104,13 @@ public class Employees {
 
     //Add punchOut() method
     public void punchOut(int time) {
-        this.hoursWorked += this.startTime - time;
+        this.hoursWorked += time - this.startTime;;
 
     }
 
     public void punchTimeCard(int startTime, int endTime) {
         this.punchIn(startTime);
         this.punchOut(endTime);
-        this.hoursWorked += endTime - startTime;
 
     }
 
@@ -123,7 +123,7 @@ public class Employees {
     //Add another punchOut method
     public void punchOut() {
         LocalDateTime now = LocalDateTime.now();
-        this.startTime = now.getHour();
+        this.hoursWorked += now.getHour() - this.startTime;
     }
 
 
